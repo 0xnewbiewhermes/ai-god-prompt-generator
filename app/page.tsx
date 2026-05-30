@@ -1,5 +1,25 @@
 import PromptGenerator from "@/components/PromptGenerator";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "AI Master Prompt Generator",
+  description: "Generator Master Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI. Buat prompt level elite dengan Chain of Thought, Expert Persona, dan Quality Gates.",
+  url: "https://promptgod.pro",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "IDR"
+  },
+  author: {
+    "@type": "Organization",
+    name: "AI Master Prompt Generator"
+  },
+  keywords: ["AI prompt generator", "Master Prompt", "ChatGPT", "Claude", "Gemini", "prompt engineering"]
+};
+
 const CheckIcon = () => (
   <svg className="w-3.5 h-3.5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -23,6 +43,10 @@ const aiModels = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Background decoration */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl" />
