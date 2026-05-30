@@ -1,0 +1,19 @@
+{
+  "name": "AI God Prompt Generator",
+  "short_name": "God Prompt",
+  "description": "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "categories": ["utilities", "productivity"],
+  "lang": "id",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
