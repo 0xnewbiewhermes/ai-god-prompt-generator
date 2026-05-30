@@ -36,10 +36,10 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-lg sm:text-xl font-bold gradient-text">
-                AI God Prompt Generator
+                AI Master Prompt Generator
               </h1>
               <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
-                Buat God Prompt level elite untuk semua model AI
+                Buat Master Prompt level elite untuk semua model AI
               </p>
             </div>
           </div>
@@ -52,13 +52,13 @@ export default function Home() {
         <section className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12" aria-label="Pengenalan">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-amber-100 dark:bg-amber-900/30 rounded-full">
             <span className="text-amber-600 dark:text-amber-400 text-base sm:text-lg" aria-hidden="true">⚡</span>
-            <span className="text-xs sm:text-sm font-semibold text-amber-700 dark:text-amber-300">GOD PROMPT MODE</span>
+            <span className="text-xs sm:text-sm font-semibold text-amber-700 dark:text-amber-300">MASTER PROMPT MODE</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white px-2">
-            Buat <span className="gradient-text">God Prompt</span> dalam Hitungan Detik
+            Buat <span className="gradient-text">Master Prompt</span> dalam Hitungan Detik
           </h2>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2">
-            Generator prompt AI gratis yang menghasilkan God Prompt level elite untuk ChatGPT, Claude, Gemini, dan semua model AI. Dapatkan output yang lebih detail, spesifik, dan actionable.
+            Generator prompt AI gratis yang menghasilkan Master Prompt level elite untuk ChatGPT, Claude, Gemini, dan semua model AI. Dapatkan output yang lebih detail, spesifik, dan actionable.
           </p>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-3 sm:mt-4 px-2">
             {features.map((feature) => (
@@ -86,16 +86,16 @@ export default function Home() {
         <PromptGenerator />
 
         {/* SEO Content Section */}
-        <section className="bg-white/70 dark:bg-gray-800/50 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 p-4 sm:p-6 md:p-8 mt-12" aria-label="Tentang God Prompt">
+        <section className="bg-white/70 dark:bg-gray-800/50 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 p-4 sm:p-6 md:p-8 mt-12" aria-label="Tentang Master Prompt">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Apa itu God Prompt?
+            Apa itu Master Prompt?
           </h2>
           <div className="prose prose-sm dark:prose-invert max-w-none space-y-4">
             <p className="text-gray-600 dark:text-gray-400">
-              <strong>God Prompt</strong> adalah teknik prompt engineering tingkat lanjut yang memaksa AI untuk berpikir lebih dalam, lebih terstruktur, dan menghasilkan output berkualitas tinggi. Dengan menggunakan God Prompt, Anda bisa mendapatkan respons yang lebih detail, spesifik, dan actionable dari ChatGPT, Claude, Gemini, dan model AI lainnya.
+              <strong>Master Prompt</strong> adalah teknik prompt engineering tingkat lanjut yang memaksa AI untuk berpikir lebih dalam, lebih terstruktur, dan menghasilkan output berkualitas tinggi. Dengan menggunakan Master Prompt, Anda bisa mendapatkan respons yang lebih detail, spesifik, dan actionable dari ChatGPT, Claude, Gemini, dan model AI lainnya.
             </p>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-              Mengapa Menggunakan God Prompt?
+              Mengapa Menggunakan Master Prompt?
             </h3>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
               <li><strong>Chain of Thought</strong> - AI dipaksa berpikir step-by-step sebelum menjawab</li>
@@ -105,12 +105,12 @@ export default function Home() {
               <li><strong>Anti-Generic</strong> - Prompt yang menghasilkan jawaban spesifik, bukan template</li>
             </ul>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-              Cara Menggunakan AI God Prompt Generator
+              Cara Menggunakan AI Master Prompt Generator
             </h3>
             <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-400">
               <li>Pilih target AI (ChatGPT, Claude, Gemini, atau Universal)</li>
               <li>Ketik kebutuhan Anda di kolom input</li>
-              <li>Klik tombol &quot;Buat God Prompt&quot;</li>
+              <li>Klik tombol &quot;Buat Master Prompt&quot;</li>
               <li>Copy prompt yang dihasilkan</li>
               <li>Paste prompt tersebut ke AI yang dipilih</li>
             </ol>
@@ -123,7 +123,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              AI God Prompt Generator
+              AI Master Prompt Generator
             </span>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               &copy; {new Date().getFullYear()} &middot; Dibuat dengan ❤️

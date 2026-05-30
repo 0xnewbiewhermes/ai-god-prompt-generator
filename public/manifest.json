@@ -1,7 +1,7 @@
 {
-  "name": "AI God Prompt Generator",
-  "short_name": "God Prompt",
-  "description": "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI",
+  "name": "AI Master Prompt Generator",
+  "short_name": "Master Prompt",
+  "description": "Generator Master Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8fafc",

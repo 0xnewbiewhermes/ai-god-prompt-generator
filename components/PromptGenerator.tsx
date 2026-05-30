@@ -73,7 +73,7 @@ export default function PromptGenerator() {
             ref={outputRef}
             tabIndex={-1}
             className="outline-none"
-            aria-label="Langkah 3: Hasil God Prompt"
+            aria-label="Langkah 3: Hasil Master Prompt"
           >
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-green-500/25" aria-hidden="true">
@@ -82,7 +82,7 @@ export default function PromptGenerator() {
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
                   <h2 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
-                    God Prompt Siap Digunakan
+                    Master Prompt Siap Digunakan
                   </h2>
                 </div>
                 <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">

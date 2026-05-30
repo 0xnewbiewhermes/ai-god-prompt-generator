@@ -34,14 +34,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
-    template: "%s | AI God Prompt Generator",
+    default: "AI Master Prompt Generator - Buat Prompt Elite untuk Semua AI",
+    template: "%s | AI Master Prompt Generator",
   },
   description:
-    "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI. Buat prompt level elite dengan Chain of Thought, Expert Persona, dan Quality Gates. Hasilkan output AI yang lebih detail, spesifik, dan actionable.",
+    "Generator Master Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI. Buat prompt level elite dengan Chain of Thought, Expert Persona, dan Quality Gates. Hasilkan output AI yang lebih detail, spesifik, dan actionable.",
   keywords: [
     "AI prompt generator",
-    "God Prompt",
+    "Master Prompt",
     "ChatGPT prompt",
     "Claude prompt",
     "Gemini prompt",
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
     "prompt template AI",
     "cara pakai ChatGPT",
   ],
-  authors: [{ name: "AI God Prompt Generator" }],
-  creator: "AI God Prompt Generator",
-  publisher: "AI God Prompt Generator",
+  authors: [{ name: "AI Master Prompt Generator" }],
+  creator: "AI Master Prompt Generator",
+  publisher: "AI Master Prompt Generator",
   formatDetection: {
     email: false,
     address: false,
@@ -73,16 +73,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: SITE_URL,
-    siteName: "AI God Prompt Generator",
-    title: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
+    siteName: "AI Master Prompt Generator",
+    title: "AI Master Prompt Generator - Buat Prompt Elite untuk Semua AI",
     description:
-      "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini. Buat prompt level elite yang menghasilkan output AI lebih detail dan spesifik.",
+      "Generator Master Prompt gratis untuk ChatGPT, Claude, Gemini. Buat prompt level elite yang menghasilkan output AI lebih detail dan spesifik.",
   },
   twitter: {
     card: "summary",
-    title: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
+    title: "AI Master Prompt Generator - Buat Prompt Elite untuk Semua AI",
     description:
-      "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini. Hasilkan output AI level expert.",
+      "Generator Master Prompt gratis untuk ChatGPT, Claude, Gemini. Hasilkan output AI level expert.",
   },
   robots: {
     index: true,
