@@ -7,6 +7,7 @@ const geistSans = Geist({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 const geistMono = Geist_Mono({
@@ -14,9 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
   preload: false,
+  fallback: ["monospace"],
 });
 
-const SITE_URL = "https://ai-god-prompt.vercel.app";
+const SITE_URL = "https://ai-god-prompt-generator.vercel.app";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -75,21 +77,12 @@ export const metadata: Metadata = {
     title: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
     description:
       "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini. Buat prompt level elite yang menghasilkan output AI lebih detail dan spesifik.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AI God Prompt Generator",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
     description:
       "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini. Hasilkan output AI level expert.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -105,38 +98,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
-  verification: {
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-  },
   category: "technology",
-};
-
-// JSON-LD Structured Data
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "AI God Prompt Generator",
-  description:
-    "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI",
-  url: SITE_URL,
-  applicationCategory: "UtilitiesApplication",
-  operatingSystem: "Web",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "IDR",
-  },
-  featureList: [
-    "God Prompt Generator untuk ChatGPT",
-    "God Prompt Generator untuk Claude",
-    "God Prompt Generator untuk Gemini",
-    "Chain of Thought Prompting",
-    "Expert Persona Prompting",
-    "Quality Gates Verification",
-    "Output Terstruktur",
-    "Bahasa Indonesia",
-  ],
 };
 
 export default function RootLayout({
@@ -151,13 +113,10 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="8ho-Ft8hHuMcLCLP8D9BTO2MQjkx5SRls8GRqBAV-Mo" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
       </head>
       <body className="min-h-screen flex flex-col">
         <a
