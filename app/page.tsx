@@ -65,7 +65,7 @@ export default function Home() {
               <h1 className="text-lg sm:text-xl font-bold gradient-text">
                 AI God Prompt Generator
               </h1>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
                 Buat God Prompt level elite untuk semua model AI
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function Home() {
 
         {/* Supported AI Models - SEO friendly */}
         <section className="text-center mb-4" aria-label="Model AI yang didukung">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
             Mendukung: {aiModels.map((m, i) => (
               <span key={m.name}>
                 <strong className="text-gray-700 dark:text-gray-300">{m.name}</strong>
@@ -119,7 +119,7 @@ export default function Home() {
               <h2 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
                 Pilih Target AI
               </h2>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                 Pilih model AI yang akan kamu gunakan
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function Home() {
               <h2 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
                 Deskripsakan Kebutuhanmu
               </h2>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                 Jelaskan apa yang ingin kamu buat sedetail mungkin
               </p>
             </div>
@@ -167,7 +167,7 @@ export default function Home() {
                       Elite
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     Copy prompt ini dan gunakan di AI pilihanmu untuk hasil maksimal
                   </p>
                 </div>
@@ -177,7 +177,7 @@ export default function Home() {
                 <div className="bg-white/70 dark:bg-gray-800/50 rounded-2xl sm:rounded-3xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
                   <div className="flex flex-col items-center gap-4" role="status" aria-label="Sedang membuat prompt">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 border-4 border-indigo-200 dark:border-indigo-800 border-t-indigo-600 dark:border-t-indigo-400 rounded-full animate-spin" />
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       Sedang membuat prompt yang optimal...
                     </p>
                   </div>
@@ -229,7 +229,7 @@ export default function Home() {
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
               AI God Prompt Generator
             </span>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
               &copy; {new Date().getFullYear()} &middot; Dibuat dengan ❤️
             </p>
           </div>

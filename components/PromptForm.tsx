@@ -66,10 +66,10 @@ export default function PromptForm({
         <div
           id="char-counter"
           aria-live="polite"
-          className={`absolute bottom-2 sm:bottom-3 right-2 sm:right-3 px-2 py-1 rounded-lg text-xs ${
+          className={`absolute bottom-2 sm:bottom-3 right-2 sm:right-3 px-2 py-1 rounded-lg text-xs font-medium ${
             isOverLimit
-              ? "bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400"
-              : "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+              ? "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300"
+              : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
           }`}
         >
           {request.length}/{MAX_CHARS}

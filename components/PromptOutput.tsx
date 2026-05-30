@@ -49,7 +49,7 @@ export default function PromptOutput({ prompt }: PromptOutputProps) {
                 <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-400" />
                 <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-400" />
               </div>
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400 ml-1 sm:ml-2">
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-400 ml-1 sm:ml-2">
                 master-prompt.txt
               </span>
             </div>
@@ -95,7 +95,7 @@ export default function PromptOutput({ prompt }: PromptOutputProps) {
 
           {/* Footer */}
           <div className="px-3 sm:px-5 py-2 sm:py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/50">
-            <div className="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
               <span>{prompt.split("\n").length} baris</span>
               <span>{prompt.length} karakter</span>
             </div>
