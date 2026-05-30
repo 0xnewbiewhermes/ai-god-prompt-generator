@@ -112,7 +112,7 @@ export default function Home() {
         {/* Step 1: Select Target AI */}
         <section className="bg-white/70 dark:bg-gray-800/50 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 p-4 sm:p-6 md:p-8" aria-label="Langkah 1: Pilih AI">
           <div className="flex items-center gap-3 mb-4 sm:mb-6">
-            <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-indigo-500/25">
+            <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-indigo-500/25" aria-hidden="true">
               1
             </span>
             <div>
@@ -130,7 +130,7 @@ export default function Home() {
         {/* Step 2: Input Request */}
         <section className="bg-white/70 dark:bg-gray-800/50 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 p-4 sm:p-6 md:p-8" aria-label="Langkah 2: Deskripsakan kebutuhan">
           <div className="flex items-center gap-3 mb-4 sm:mb-6">
-            <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-purple-500/25">
+            <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-purple-500/25" aria-hidden="true">
               2
             </span>
             <div>
@@ -155,7 +155,7 @@ export default function Home() {
               aria-label="Langkah 3: Hasil God Prompt"
             >
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-green-500/25">
+                <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-green-500/25" aria-hidden="true">
                   3
                 </span>
                 <div>
@@ -163,7 +163,7 @@ export default function Home() {
                     <h2 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
                       God Prompt Siap Digunakan
                     </h2>
-                    <span className="px-2 py-0.5 text-[10px] font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full uppercase tracking-wider">
+                    <span className="px-2 py-0.5 text-[10px] font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full uppercase tracking-wider" aria-label="Status: Elite">
                       Elite
                     </span>
                   </div>

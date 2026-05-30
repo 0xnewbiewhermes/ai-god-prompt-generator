@@ -12,12 +12,15 @@ export default function TargetSelector({
   onSelect,
 }: TargetSelectorProps) {
   return (
-    <div className="w-full">
+    <div className="w-full" role="radiogroup" aria-label="Pilih model AI target">
       <div className="grid grid-cols-2 gap-3 sm:gap-4">
         {AI_MODELS.map((model) => (
           <button
             key={model.id}
             onClick={() => onSelect(model.id)}
+            role="radio"
+            aria-checked={selected === model.id}
+            aria-label={`${model.name} - ${model.description}`}
             className={`group relative flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 active:scale-95 ${
               selected === model.id
                 ? "border-indigo-500 bg-gradient-to-b from-indigo-50 to-purple-50 dark:from-indigo-950/50 dark:to-purple-950/50 shadow-lg shadow-indigo-500/20"
@@ -25,7 +28,7 @@ export default function TargetSelector({
             }`}
           >
             {selected === model.id && (
-              <div className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 w-5 h-5 sm:w-6 sm:h-6 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 w-5 h-5 sm:w-6 sm:h-6 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg" aria-hidden="true">
                 <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -33,7 +36,7 @@ export default function TargetSelector({
             )}
             <span className={`text-3xl sm:text-4xl transition-transform duration-200 ${
               selected === model.id ? "scale-110" : ""
-            }`}>
+            }`} aria-hidden="true">
               {model.icon}
             </span>
             <div className="text-center">
