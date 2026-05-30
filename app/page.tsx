@@ -1,14 +1,4 @@
-import dynamic from "next/dynamic";
-
-// Dynamic import untuk client component - lazy load
-const PromptGenerator = dynamic(() => import("@/components/PromptGenerator"), {
-  loading: () => (
-    <div className="flex items-center justify-center py-20">
-      <div className="w-10 h-10 border-4 border-indigo-200 dark:border-indigo-800 border-t-indigo-600 dark:border-t-indigo-400 rounded-full animate-spin" />
-    </div>
-  ),
-  ssr: false,
-});
+import PromptGenerator from "@/components/PromptGenerator";
 
 const CheckIcon = () => (
   <svg className="w-3.5 h-3.5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
