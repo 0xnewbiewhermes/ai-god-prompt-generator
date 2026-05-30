@@ -34,8 +34,11 @@ const nextConfig: NextConfig = {
   // Enable compression
   compress: true,
 
-  // Enable React strict mode for better development experience
+  // Enable React strict mode
   reactStrictMode: true,
+
+  // Disable x-powered-by header
+  poweredByHeader: false,
 
   // Optimize images
   images: {
@@ -47,6 +50,11 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ["react", "react-dom"],
+  },
+
+  // Compiler options
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
   },
 
   async headers() {
@@ -62,13 +70,13 @@ const nextConfig: NextConfig = {
         headers: [...securityHeaders, ...cacheHeaders],
       },
       {
-        // Cache API responses briefly
-        source: "/api/(.*)",
+        // Cache HTML pages briefly
+        source: "/(.*)",
         headers: [
           ...securityHeaders,
           {
             key: "Cache-Control",
-            value: "public, s-maxage=60, stale-while-revalidate=300",
+            value: "public, s-maxage=3600, stale-while-revalidate=86400",
           },
         ],
       },
