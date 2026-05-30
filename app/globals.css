@@ -45,6 +45,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -52,15 +53,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
   padding-top: var(--safe-top);
   padding-bottom: var(--safe-bottom);
   padding-left: var(--safe-left);
   padding-right: var(--safe-right);
-}
-
-/* Prevent iOS bounce scroll */
-.overscroll-none {
-  overscroll-behavior: none;
 }
 
 /* Better touch targets on mobile */
@@ -86,13 +84,6 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
-  }
-}
-
-/* Fix iOS rubber band scrolling */
-@supports (-webkit-touch-callout: none) {
-  body {
-    height: -webkit-fill-available;
   }
 }
 
