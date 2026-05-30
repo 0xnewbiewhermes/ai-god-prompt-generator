@@ -3,9 +3,6 @@
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
-  --primary: #6366f1;
-  --primary-light: #818cf8;
-  --accent: #a855f7;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
@@ -23,9 +20,6 @@
   :root {
     --background: #020617;
     --foreground: #e2e8f0;
-    --primary: #818cf8;
-    --primary-light: #a5b4fc;
-    --accent: #c084fc;
   }
 }
 
@@ -45,7 +39,6 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 body {
@@ -53,8 +46,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
-  overflow-y: auto;
   min-height: 100vh;
+  min-height: 100dvh;
   padding-top: var(--safe-top);
   padding-bottom: var(--safe-bottom);
   padding-left: var(--safe-left);
@@ -80,13 +73,14 @@ body {
   }
 }
 
-/* Smooth scrolling for mobile */
+/* Smooth scrolling - only for non-reduced-motion users */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 }
 
+/* Animation - optimized with will-change */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -99,7 +93,8 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeInUp 0.4s ease-out forwards;
+  will-change: opacity, transform;
 }
 
 /* Disable animations on mobile for performance */
@@ -108,13 +103,26 @@ body {
     animation: none;
     opacity: 1;
     transform: none;
+    will-change: auto;
   }
 }
 
+/* Reduce animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* Glass effect - optimized */
 .glass-effect {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  will-change: backdrop-filter;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -123,6 +131,7 @@ body {
   }
 }
 
+/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
   -webkit-background-clip: text;
@@ -130,12 +139,15 @@ body {
   background-clip: text;
 }
 
+/* Card hover - GPU accelerated */
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 .card-hover:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) translateZ(0);
   box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
 }
 
@@ -145,32 +157,32 @@ body {
   }
 }
 
-/* Mobile-specific optimizations */
+/* Disable hover effects on mobile */
 @media (max-width: 640px) {
   .card-hover:hover {
     transform: none;
     box-shadow: none;
+    will-change: auto;
   }
 }
 
-/* Fix horizontal scroll on mobile */
+/* Fix horizontal scroll */
 pre {
   max-width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
 }
 
-/* Better textarea behavior on mobile */
+/* Textarea mobile */
 textarea {
   -webkit-appearance: none;
   appearance: none;
   border-radius: 12px;
 }
 
-/* Fix sticky header on mobile */
-@supports (position: sticky) or (position: -webkit-sticky) {
-  header {
-    position: -webkit-sticky;
-    position: sticky;
-  }
+/* Sticky header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }

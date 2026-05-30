@@ -23,12 +23,54 @@ const securityHeaders = [
   },
 ];
 
+const cacheHeaders = [
+  {
+    key: "Cache-Control",
+    value: "public, max-age=31536000, immutable",
+  },
+];
+
 const nextConfig: NextConfig = {
+  // Enable compression
+  compress: true,
+
+  // Enable React strict mode for better development experience
+  reactStrictMode: true,
+
+  // Optimize images
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+  },
+
+  // Experimental features for performance
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ["react", "react-dom"],
+  },
+
   async headers() {
     return [
       {
+        // Security headers for all routes
         source: "/(.*)",
         headers: securityHeaders,
+      },
+      {
+        // Cache static assets (JS, CSS, images)
+        source: "/(.*)\\.(js|css|ico|svg|png|jpg|jpeg|gif|webp|avif|woff|woff2)",
+        headers: [...securityHeaders, ...cacheHeaders],
+      },
+      {
+        // Cache API responses briefly
+        source: "/api/(.*)",
+        headers: [
+          ...securityHeaders,
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=300",
+          },
+        ],
       },
     ];
   },
