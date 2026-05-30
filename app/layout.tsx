@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AI God Prompt Generator — Buat Prompt Elite untuk Semua AI",
+    default: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
     template: "%s | AI God Prompt Generator",
   },
   description:
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: SITE_URL,
     siteName: "AI God Prompt Generator",
-    title: "AI God Prompt Generator — Buat Prompt Elite untuk Semua AI",
+    title: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
     description:
       "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini. Buat prompt level elite yang menghasilkan output AI lebih detail dan spesifik.",
     images: [
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI God Prompt Generator — Buat Prompt Elite untuk Semua AI",
+    title: "AI God Prompt Generator - Buat Prompt Elite untuk Semua AI",
     description:
       "Generator God Prompt gratis untuk ChatGPT, Claude, Gemini. Hasilkan output AI level expert.",
     images: ["/og-image.png"],

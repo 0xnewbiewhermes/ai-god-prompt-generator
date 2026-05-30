@@ -202,11 +202,11 @@ export default function Home() {
               Mengapa Menggunakan God Prompt?
             </h3>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
-              <li><strong>Chain of Thought</strong> — AI dipaksa berpikir step-by-step sebelum menjawab</li>
-              <li><strong>Expert Persona</strong> — AI berperan sebagai ahli dengan pengalaman 20+ tahun</li>
-              <li><strong>Quality Gates</strong> — Checklist kualitas yang harus dipenuhi sebelum output dikirim</li>
-              <li><strong>Structured Output</strong> — Format output yang rapi dan mudah dicerna</li>
-              <li><strong>Anti-Generic</strong> — Prompt yang menghasilkan jawaban spesifik, bukan template</li>
+              <li><strong>Chain of Thought</strong> - AI dipaksa berpikir step-by-step sebelum menjawab</li>
+              <li><strong>Expert Persona</strong> - AI berperan sebagai ahli dengan pengalaman 20+ tahun</li>
+              <li><strong>Quality Gates</strong> - Checklist kualitas yang harus dipenuhi sebelum output dikirim</li>
+              <li><strong>Structured Output</strong> - Format output yang rapi dan mudah dicerna</li>
+              <li><strong>Anti-Generic</strong> - Prompt yang menghasilkan jawaban spesifik, bukan template</li>
             </ul>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
               Cara Menggunakan AI God Prompt Generator
