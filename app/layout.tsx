@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
   fallback: ["monospace"],
 });
 
-const SITE_URL = "https://ai-god-prompt-generator.vercel.app";
+const SITE_URL = "https://promptgod.pro";
 
 export const viewport: Viewport = {
   width: "device-width",

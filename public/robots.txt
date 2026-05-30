@@ -1,12 +1,12 @@
-# Robots.txt for AI God Prompt Generator
-# https://ai-god-prompt.vercel.app
+# Robots.txt for PromptGod.pro
+# https://promptgod.pro
 
 User-agent: *
 Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://ai-god-prompt.vercel.app/sitemap.xml
+Sitemap: https://promptgod.pro/sitemap.xml
 
 # Crawl-delay (optional)
 Crawl-delay: 1
