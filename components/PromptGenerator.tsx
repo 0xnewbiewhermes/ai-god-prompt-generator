@@ -84,9 +84,6 @@ export default function PromptGenerator() {
                   <h2 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
                     God Prompt Siap Digunakan
                   </h2>
-                  <span className="px-2 py-0.5 text-[10px] font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full uppercase tracking-wider" aria-label="Status: Elite">
-                    Elite
-                  </span>
                 </div>
                 <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   Copy prompt ini dan gunakan di AI pilihanmu untuk hasil maksimal
