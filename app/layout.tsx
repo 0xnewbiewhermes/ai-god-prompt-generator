@@ -112,7 +112,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <meta name="google-site-verification" content="8ho-Ft8hHuMcLCLP8D9BTO2MQjkx5SRls8GRqBAV-Mo" />
+        <meta name="google-site-verification" content="eOePvsEyJClgkF7CgCxJvM4NvupiOcwQJwjr1xHZi44" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
