@@ -281,7 +281,7 @@ export default function Home() {
                 promptgod.pro
               </span>
             </div>
-            <p className="text-xs text-[var(--text-muted)]">
+            <p className="text-xs text-[var(--text-muted)]" suppressHydrationWarning>
               &copy; {new Date().getFullYear()}
             </p>
           </div>

@@ -86,7 +86,7 @@ export default function PromptGenerator() {
                     <div className="absolute inset-0 rounded-full border-2 border-transparent animate-spin" style={{ borderTopColor: "var(--accent)" }} />
                   </div>
                   <p className="text-sm text-[var(--text-secondary)]">
-                    Sedang membuat prompt yang optimal...
+                    Sedang membuat prompt yang optimal…
                   </p>
                 </div>
               </div>

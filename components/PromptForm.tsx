@@ -51,11 +51,14 @@ export default function PromptForm({
         </label>
         <textarea
           id="request"
+          name="request"
           value={request}
           onChange={(e) => setRequest(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          placeholder="Ceritakan kebutuhanmu..."
+          placeholder="Ceritakan kebutuhanmu…"
+          autoComplete="off"
+          spellCheck={false}
           rows={4}
           maxLength={MAX_CHARS}
           aria-describedby="char-counter"
@@ -92,19 +95,11 @@ export default function PromptForm({
             type="button"
             onClick={() => handleExampleClick(example)}
             aria-label={`Gunakan contoh: ${example}`}
-            className="px-3 py-1.5 text-xs rounded-lg transition-colors duration-150"
+            className="px-3 py-1.5 text-xs rounded-lg transition-all duration-150 hover:text-[var(--text-secondary)] hover:border-[var(--card-border)] active:scale-95"
             style={{
               background: "var(--surface-bg)",
               border: "1px solid var(--surface-border)",
               color: "var(--text-tertiary)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "var(--text-secondary)";
-              e.currentTarget.style.borderColor = "var(--card-border)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "var(--text-tertiary)";
-              e.currentTarget.style.borderColor = "var(--surface-border)";
             }}
           >
             {example}
@@ -141,7 +136,7 @@ export default function PromptForm({
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               />
             </svg>
-            Membuat Prompt...
+            Membuat Prompt…
           </>
         ) : (
           <>Buat Master Prompt</>

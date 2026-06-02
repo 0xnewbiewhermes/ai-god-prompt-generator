@@ -80,6 +80,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overflow-x: hidden;
+  color-scheme: dark light;
 }
 
 body {
@@ -217,7 +218,7 @@ body {
   font-weight: 600;
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.15s ease;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(201, 168, 76, 0.3);
@@ -233,9 +234,15 @@ body {
 
 .btn-primary:active {
   background: #b8942e;
+  transform: scale(0.98);
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(201, 168, 76, 0.3);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid #c9a84c;
+  outline-offset: 2px;
 }
 
 .btn-primary:disabled {
@@ -243,6 +250,7 @@ body {
   color: #52525b;
   box-shadow: 0 0 0 1px #27272a;
   cursor: not-allowed;
+  transform: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -263,14 +271,14 @@ body {
   border-radius: 12px;
   color: var(--text-primary);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
 }
 
 .input-field::placeholder {
   color: var(--text-muted);
 }
 
-.input-field:focus {
-  outline: none;
+.input-field:focus-visible {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
 }
@@ -354,4 +362,24 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
+}
+
+/* ============================================
+   Focus-visible utility (for inline-styled buttons)
+   ============================================ */
+
+button:focus-visible,
+[role="radio"]:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Tabular numbers for stats
+   ============================================ */
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }

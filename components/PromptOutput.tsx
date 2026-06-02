@@ -84,7 +84,7 @@ export default function PromptOutput({ prompt }: PromptOutputProps) {
             tabIndex={0}
             role="region"
             aria-label="Konten prompt yang dihasilkan"
-            className="whitespace-pre-wrap break-all sm:break-words font-mono text-xs sm:text-sm leading-relaxed text-[var(--text-primary)] max-h-[300px] sm:max-h-[500px] overflow-auto focus:outline-none rounded-lg p-1"
+            className="whitespace-pre-wrap break-all sm:break-words font-mono text-xs sm:text-sm leading-relaxed text-[var(--text-primary)] max-h-[300px] sm:max-h-[500px] overflow-auto focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-2 rounded-lg p-1"
           >
             {prompt}
           </pre>
@@ -95,8 +95,8 @@ export default function PromptOutput({ prompt }: PromptOutputProps) {
           className="px-4 sm:px-5 py-2.5 flex items-center justify-between text-[11px] text-[var(--text-muted)]"
           style={{ borderTop: "1px solid var(--card-border)" }}
         >
-          <span>{prompt.split("\n").length} baris</span>
-          <span>{prompt.length} karakter</span>
+          <span className="tabular-nums">{prompt.split("\n").length} baris</span>
+          <span className="tabular-nums">{prompt.length} karakter</span>
         </div>
       </div>
     </div>
