@@ -1,12 +1,58 @@
 @import "tailwindcss";
 
+/* ============================================
+   AI Master Prompt Generator — Premium Pro UI
+   ============================================ */
+
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #09090b;
+  --foreground: #fafafa;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
+
+  /* Card system */
+  --card-bg: #111113;
+  --card-border: #1e1e22;
+  --card-hover: #161619;
+
+  /* Surface */
+  --surface-bg: #18181b;
+  --surface-border: #27272a;
+
+  /* Input */
+  --input-bg: #141416;
+  --input-border: #232326;
+  --input-focus: #c9a84c;
+
+  /* Accent — warm gold */
+  --accent: #c9a84c;
+  --accent-soft: rgba(201, 168, 76, 0.12);
+
+  /* Text hierarchy */
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  --text-muted: #3f3f46;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fafafa;
+    --foreground: #09090b;
+    --card-bg: #ffffff;
+    --card-border: #e4e4e7;
+    --card-hover: #f8f8fa;
+    --surface-bg: #f4f4f5;
+    --surface-border: #e4e4e7;
+    --input-bg: #ffffff;
+    --input-border: #d4d4d8;
+    --text-primary: #09090b;
+    --text-secondary: #52525b;
+    --text-tertiary: #71717a;
+    --text-muted: #a1a1aa;
+  }
 }
 
 @theme inline {
@@ -16,23 +62,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #020617;
-    --foreground: #e2e8f0;
-  }
-}
+/* ============================================
+   Base
+   ============================================ */
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-color: #27272a transparent;
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  * {
-    scrollbar-color: #334155 transparent;
-  }
+@media (prefers-color-scheme: light) {
+  * { scrollbar-color: #d4d4d8 transparent; }
 }
 
 html {
@@ -54,133 +95,261 @@ body {
   padding-right: var(--safe-right);
 }
 
-/* Better touch targets on mobile */
 @media (pointer: coarse) {
-  button,
-  a,
-  [role="button"] {
+  button, a, [role="button"] {
     min-height: 44px;
     min-width: 44px;
   }
 }
 
-/* Prevent zoom on input focus for iOS */
 @media screen and (max-width: 768px) {
-  input,
-  textarea,
-  select {
+  input, textarea, select {
     font-size: 16px !important;
   }
 }
 
-/* Smooth scrolling - only for non-reduced-motion users */
 @media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
+  html { scroll-behavior: smooth; }
+}
+
+/* ============================================
+   Background — minimal, professional
+   ============================================ */
+
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 600px 400px at 50% 0%, rgba(99, 102, 241, 0.06), transparent),
+    radial-gradient(ellipse 400px 300px at 80% 50%, rgba(139, 92, 246, 0.04), transparent);
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 60% 40% at 50% 20%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 60% 40% at 50% 20%, black, transparent);
+}
+
+@media (prefers-color-scheme: light) {
+  .bg-mesh {
+    background:
+      radial-gradient(ellipse 600px 400px at 50% 0%, rgba(99, 102, 241, 0.04), transparent),
+      radial-gradient(ellipse 400px 300px at 80% 50%, rgba(139, 92, 246, 0.02), transparent);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   }
 }
 
-/* Animation - optimized with will-change */
+/* ============================================
+   Card System
+   ============================================ */
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  position: relative;
+}
+
+/* Top accent line */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-surface {
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+}
+
+.card-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* ============================================
+   Gradient Text
+   ============================================ */
+
+.gradient-text {
+  color: #c9a84c;
+}
+
+.gradient-text-accent {
+  color: #c9a84c;
+}
+
+@media (prefers-color-scheme: light) {
+  .gradient-text {
+    color: #b8942e;
+  }
+  .gradient-text-accent {
+    color: #b8942e;
+  }
+}
+
+/* ============================================
+   Button — Clean, professional
+   ============================================ */
+
+.btn-primary {
+  position: relative;
+  background: #c9a84c;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.15s ease;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  background: #7c7fff;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(99, 102, 241, 0.4),
+    0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.btn-primary:active {
+  background: #5558e6;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:disabled {
+  background: #27272a;
+  color: #52525b;
+  box-shadow: 0 0 0 1px #27272a;
+  cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: light) {
+  .btn-primary:disabled {
+    background: #e4e4e7;
+    color: #a1a1aa;
+    box-shadow: 0 0 0 1px #e4e4e7;
+  }
+}
+
+/* ============================================
+   Input
+   ============================================ */
+
+.input-field {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.4s ease-out forwards;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.anim-fade-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: opacity, transform;
 }
 
-/* Disable animations on mobile for performance */
-@media (max-width: 768px) {
-  .animate-fade-in-up {
-    animation: none;
-    opacity: 1;
-    transform: none;
-    will-change: auto;
-  }
+.anim-fade {
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
-/* Reduce animations for users who prefer reduced motion */
+.anim-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-in-up {
-    animation: none;
+  .anim-fade-up, .anim-fade, .anim-slide-up {
+    animation: none !important;
     opacity: 1;
     transform: none;
-    will-change: auto;
   }
 }
 
-/* Glass effect - optimized */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.85);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  will-change: backdrop-filter;
+/* ============================================
+   Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+@media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-thumb { background: #d4d4d8; }
+  ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
 }
 
-@media (prefers-color-scheme: dark) {
-  .glass-effect {
-    background: rgba(15, 23, 42, 0.85);
-  }
+/* ============================================
+   Misc
+   ============================================ */
+
+.divider {
+  height: 1px;
+  background: var(--card-border);
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-/* Card hover - GPU accelerated */
-.card-hover {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  will-change: transform, box-shadow;
-  transform: translateZ(0);
-}
-
-.card-hover:hover {
-  transform: translateY(-2px) translateZ(0);
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  .card-hover:hover {
-    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
-  }
-}
-
-/* Disable hover effects on mobile */
-@media (max-width: 640px) {
-  .card-hover:hover {
-    transform: none;
-    box-shadow: none;
-    will-change: auto;
-  }
-}
-
-/* Fix horizontal scroll */
 pre {
   max-width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
 }
 
-/* Textarea mobile */
-textarea {
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 12px;
-}
-
-/* Sticky header */
 header {
   position: sticky;
   top: 0;

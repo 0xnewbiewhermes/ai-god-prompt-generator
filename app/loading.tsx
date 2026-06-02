@@ -1,11 +1,16 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-indigo-50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
-      <div className="flex flex-col items-center gap-4">
-        <div className="w-12 h-12 border-4 border-indigo-200 dark:border-indigo-800 border-t-indigo-600 dark:border-t-indigo-400 rounded-full animate-spin" />
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          Memuat...
-        </p>
+    <div className="relative min-h-screen flex items-center justify-center">
+      <div className="bg-mesh" aria-hidden="true" />
+      <div className="relative z-10 flex flex-col items-center gap-5">
+        <div className="relative w-10 h-10">
+          <div
+            className="absolute inset-0 rounded-full border-2"
+            style={{ borderColor: "var(--surface-border)" }}
+          />
+          <div className="absolute inset-0 rounded-full border-2 border-transparent animate-spin" style={{ borderTopColor: "var(--accent)" }} />
+        </div>
+        <p className="text-sm text-[var(--text-tertiary)]">Memuat...</p>
       </div>
     </div>
   );

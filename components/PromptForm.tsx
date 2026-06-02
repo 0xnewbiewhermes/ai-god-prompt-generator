@@ -43,10 +43,9 @@ export default function PromptForm({
   const isOverLimit = request.length > MAX_CHARS;
 
   return (
-    <form onSubmit={handleSubmit} className="w-full space-y-3 sm:space-y-4">
-      <div className={`relative rounded-xl sm:rounded-2xl transition-all duration-200 ${
-        isFocused ? "ring-2 ring-indigo-500/30 shadow-lg shadow-indigo-500/10" : ""
-      }`}>
+    <form onSubmit={handleSubmit} className="w-full space-y-4">
+      {/* Input */}
+      <div className="relative">
         <label htmlFor="request" className="sr-only">
           Deskripsakan kebutuhanmu
         </label>
@@ -61,61 +60,92 @@ export default function PromptForm({
           maxLength={MAX_CHARS}
           aria-describedby="char-counter"
           aria-invalid={isOverLimit}
-          className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-gray-200/60 dark:border-gray-700/60 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none transition-all resize-none text-base leading-relaxed"
+          className="input-field w-full px-5 py-4 text-base leading-relaxed resize-none"
         />
         <div
           id="char-counter"
           aria-live="polite"
-          className={`absolute bottom-2 sm:bottom-3 right-2 sm:right-3 px-2 py-1 rounded-lg text-xs font-medium ${
-            isOverLimit
-              ? "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300"
-              : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
-          }`}
+          className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg text-[11px] font-medium"
+          style={{
+            background: isOverLimit
+              ? "rgba(239,68,68,0.1)"
+              : "var(--surface-bg)",
+            color: isOverLimit ? "#f87171" : "var(--text-muted)",
+          }}
         >
           {request.length}/{MAX_CHARS}
         </div>
       </div>
 
       {/* Quick suggestions */}
-      <div className="flex flex-wrap gap-1.5 sm:gap-2" role="group" aria-label="Contoh prompt">
-        <span className="text-xs text-gray-500 dark:text-gray-400 py-1">Contoh:</span>
+      <div
+        className="flex flex-wrap gap-2"
+        role="group"
+        aria-label="Contoh prompt"
+      >
+        <span className="text-xs text-[var(--text-muted)] py-1.5">
+          Contoh:
+        </span>
         {examplePrompts.map((example) => (
           <button
             key={example}
             type="button"
             onClick={() => handleExampleClick(example)}
             aria-label={`Gunakan contoh: ${example}`}
-            className="px-2.5 sm:px-3 py-1.5 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 active:bg-indigo-100 dark:active:bg-indigo-900/30 active:text-indigo-600 dark:active:text-indigo-400 transition-colors duration-150 border border-gray-200/60 dark:border-gray-700/60"
+            className="px-3 py-1.5 text-xs rounded-lg transition-colors duration-150"
+            style={{
+              background: "var(--surface-bg)",
+              border: "1px solid var(--surface-border)",
+              color: "var(--text-tertiary)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "var(--text-secondary)";
+              e.currentTarget.style.borderColor = "var(--card-border)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "var(--text-tertiary)";
+              e.currentTarget.style.borderColor = "var(--surface-border)";
+            }}
           >
             {example}
           </button>
         ))}
       </div>
 
+      {/* Submit */}
       <button
         type="submit"
         disabled={!request.trim() || isLoading || isOverLimit}
         aria-busy={isLoading}
-        className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 active:from-indigo-700 active:via-purple-700 active:to-pink-700 disabled:from-gray-400 disabled:via-gray-400 disabled:to-gray-400 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-indigo-500/25 disabled:shadow-none disabled:cursor-not-allowed overflow-hidden"
+        className="btn-primary w-full sm:w-auto px-8 py-3.5 text-sm font-semibold flex items-center justify-center gap-2.5"
       >
-        <span className="relative z-10 flex items-center justify-center gap-2">
-          {isLoading ? (
-            <>
-              <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-              </svg>
-              Membuat Prompt...
-            </>
-          ) : (
-            <>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              Buat Master Prompt
-            </>
-          )}
-        </span>
+        {isLoading ? (
+          <>
+            <svg
+              className="animate-spin w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              />
+            </svg>
+            Membuat Prompt...
+          </>
+        ) : (
+          <>Buat Master Prompt</>
+        )}
       </button>
     </form>
   );

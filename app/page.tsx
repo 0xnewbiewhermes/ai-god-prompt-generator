@@ -4,153 +4,285 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "AI Master Prompt Generator",
-  description: "Generator Master Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI. Buat prompt level elite dengan Chain of Thought, Expert Persona, dan Quality Gates.",
+  description:
+    "Generator Master Prompt gratis untuk ChatGPT, Claude, Gemini, dan semua model AI. Buat prompt level elite dengan Chain of Thought, Expert Persona, dan Quality Gates.",
   url: "https://promptgod.pro",
   applicationCategory: "UtilityApplication",
   operatingSystem: "Web",
   offers: {
     "@type": "Offer",
     price: "0",
-    priceCurrency: "IDR"
+    priceCurrency: "IDR",
   },
   author: {
     "@type": "Organization",
-    name: "AI Master Prompt Generator"
+    name: "AI Master Prompt Generator",
   },
-  keywords: ["AI prompt generator", "Master Prompt", "ChatGPT", "Claude", "Gemini", "prompt engineering"]
+  keywords: [
+    "AI prompt generator",
+    "Master Prompt",
+    "ChatGPT",
+    "Claude",
+    "Gemini",
+    "prompt engineering",
+  ],
 };
 
-const CheckIcon = () => (
-  <svg className="w-3.5 h-3.5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-  </svg>
-);
-
 const features = [
-  "Rantai Pikiran",
-  "Peran Expert",
-  "Gerbang Kualitas",
-  "Output Terstruktur",
+  { label: "Chain of Thought" },
+  { label: "Expert Persona" },
+  { label: "Quality Gates" },
+  { label: "Structured Output" },
 ];
 
 const aiModels = [
-  { name: "ChatGPT", desc: "OpenAI GPT-4" },
-  { name: "Claude", desc: "Anthropic" },
-  { name: "Gemini", desc: "Google AI" },
-  { name: "Universal", desc: "Semua Model" },
+  { name: "ChatGPT", color: "#10a37f" },
+  { name: "Claude", color: "#d97757" },
+  { name: "Gemini", color: "#4285f4" },
+  { name: "Universal", color: "#8b5cf6" },
 ];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
+    <div className="relative min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Background decoration */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-300/10 dark:bg-pink-500/5 rounded-full blur-3xl" />
-      </div>
+
+      {/* Background */}
+      <div className="bg-mesh" aria-hidden="true" />
+      <div className="bg-grid" aria-hidden="true" />
 
       {/* Header */}
-      <header className="relative z-10 glass-effect border-b border-gray-200/50 dark:border-gray-800/50 sticky top-0">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
+      <header className="relative z-10 card-header">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-lg sm:text-xl font-bold gradient-text">
-                AI Master Prompt Generator
-              </h1>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
-                Buat Master Prompt level elite untuk semua model AI
-              </p>
+            <div className="flex items-center gap-3">
+              <div>
+                <h1 className="text-sm sm:text-base font-bold gradient-text tracking-tight">
+                  AI Master Prompt
+                </h1>
+                <p className="text-[10px] text-[var(--text-muted)] tracking-widest uppercase">
+                  Generator
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full card-surface">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+              </span>
+              <span className="text-[11px] text-[var(--text-tertiary)]">
+                Online
+              </span>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main id="main-content" className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8">
-        {/* Hero Section */}
-        <section className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12" aria-label="Pengenalan">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-amber-100 dark:bg-amber-900/30 rounded-full">
-            <span className="text-amber-600 dark:text-amber-400 text-base sm:text-lg" aria-hidden="true">⚡</span>
-            <span className="text-xs sm:text-sm font-semibold text-amber-700 dark:text-amber-300">MASTER PROMPT MODE</span>
+      {/* Main */}
+      <main
+        id="main-content"
+        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16"
+      >
+        {/* Hero */}
+        <section
+          className="text-center space-y-5 mb-14 sm:mb-20 anim-fade-up"
+          aria-label="Pengenalan"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full card-surface">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent)" }} aria-hidden="true" />
+            <span className="text-[11px] font-medium tracking-wide uppercase text-[var(--text-tertiary)]">
+              Prompt Engineering Tool
+            </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white px-2">
-            Buat <span className="gradient-text">Master Prompt</span> dalam Hitungan Detik
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight px-2 leading-[1.15]">
+            <span className="text-[var(--text-primary)]">Buat </span>
+            <span className="text-[var(--text-primary)]">Master Prompt</span>
+            <br />
+            <span className="text-[var(--text-secondary)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
+              dalam Hitungan Detik
+            </span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2">
-            Generator prompt AI gratis yang menghasilkan Master Prompt level elite untuk ChatGPT, Claude, Gemini, dan semua model AI. Dapatkan output yang lebih detail, spesifik, dan actionable.
+
+          <p className="text-sm sm:text-base text-[var(--text-tertiary)] max-w-lg mx-auto leading-relaxed">
+            Generator prompt AI gratis untuk ChatGPT, Claude, Gemini, dan semua
+            model AI. Hasilkan output yang lebih detail, spesifik, dan
+            actionable.
           </p>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-3 sm:mt-4 px-2">
-            {features.map((feature) => (
-              <span key={feature} className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 bg-white/70 dark:bg-gray-800/50 rounded-full text-xs text-gray-600 dark:text-gray-400 border border-gray-200/50 dark:border-gray-700/50">
-                <CheckIcon />
-                {feature}
+
+          <div className="flex flex-wrap justify-center gap-2 mt-4">
+            {features.map((feature, i) => (
+              <span
+                key={feature.label}
+                className="px-3 py-1.5 rounded-lg text-xs text-[var(--text-tertiary)] anim-fade-up"
+                style={{
+                  background: "var(--surface-bg)",
+                  border: "1px solid var(--surface-border)",
+                  animationDelay: `${i * 50}ms`,
+                }}
+              >
+                {feature.label}
               </span>
             ))}
           </div>
         </section>
 
-        {/* Supported AI Models */}
-        <section className="text-center mb-4" aria-label="Model AI yang didukung">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Mendukung: {aiModels.map((m, i) => (
-              <span key={m.name}>
-                <strong className="text-gray-700 dark:text-gray-300">{m.name}</strong>
-                {i < aiModels.length - 1 ? " · " : ""}
-              </span>
+        {/* AI Models */}
+        <section
+          className="text-center mb-6 anim-fade"
+          aria-label="Model AI yang didukung"
+          style={{ animationDelay: "150ms" }}
+        >
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            {aiModels.map((model) => (
+              <div
+                key={model.name}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg card-surface"
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: model.color }}
+                  aria-hidden="true"
+                />
+                <span className="text-xs text-[var(--text-secondary)]">
+                  {model.name}
+                </span>
+              </div>
             ))}
-          </p>
+          </div>
         </section>
 
-        {/* Client-side Interactive Components */}
-        <PromptGenerator />
+        {/* Generator */}
+        <div
+          className="anim-fade-up"
+          style={{ animationDelay: "200ms" }}
+        >
+          <PromptGenerator />
+        </div>
 
-        {/* SEO Content Section */}
-        <section className="bg-white/70 dark:bg-gray-800/50 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 p-4 sm:p-6 md:p-8 mt-12" aria-label="Tentang Master Prompt">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        {/* SEO Content */}
+        <section
+          className="card p-6 sm:p-8 md:p-10 mt-16 sm:mt-24 anim-fade-up"
+          aria-label="Tentang Master Prompt"
+          style={{ animationDelay: "300ms" }}
+        >
+          <h2 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-6">
             Apa itu Master Prompt?
           </h2>
-          <div className="prose prose-sm dark:prose-invert max-w-none space-y-4">
-            <p className="text-gray-600 dark:text-gray-400">
-              <strong>Master Prompt</strong> adalah teknik prompt engineering tingkat lanjut yang memaksa AI untuk berpikir lebih dalam, lebih terstruktur, dan menghasilkan output berkualitas tinggi. Dengan menggunakan Master Prompt, Anda bisa mendapatkan respons yang lebih detail, spesifik, dan actionable dari ChatGPT, Claude, Gemini, dan model AI lainnya.
+
+          <div className="space-y-6 text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+            <p>
+              <strong className="text-[var(--text-primary)]">
+                Master Prompt
+              </strong>{" "}
+              adalah teknik prompt engineering tingkat lanjut yang memaksa AI
+              untuk berpikir lebih dalam, lebih terstruktur, dan menghasilkan
+              output berkualitas tinggi.
             </p>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-              Mengapa Menggunakan Master Prompt?
-            </h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
-              <li><strong>Chain of Thought</strong> - AI dipaksa berpikir step-by-step sebelum menjawab</li>
-              <li><strong>Expert Persona</strong> - AI berperan sebagai ahli dengan pengalaman 20+ tahun</li>
-              <li><strong>Quality Gates</strong> - Checklist kualitas yang harus dipenuhi sebelum output dikirim</li>
-              <li><strong>Structured Output</strong> - Format output yang rapi dan mudah dicerna</li>
-              <li><strong>Anti-Generic</strong> - Prompt yang menghasilkan jawaban spesifik, bukan template</li>
-            </ul>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-              Cara Menggunakan AI Master Prompt Generator
-            </h3>
-            <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-400">
-              <li>Pilih target AI (ChatGPT, Claude, Gemini, atau Universal)</li>
-              <li>Ketik kebutuhan Anda di kolom input</li>
-              <li>Klik tombol &quot;Buat Master Prompt&quot;</li>
-              <li>Copy prompt yang dihasilkan</li>
-              <li>Paste prompt tersebut ke AI yang dipilih</li>
-            </ol>
+
+            <div className="divider" />
+
+            <div>
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-3">
+                Mengapa Menggunakan Master Prompt?
+              </h3>
+              <ul className="space-y-2">
+                {[
+                  {
+                    t: "Chain of Thought",
+                    d: "AI dipaksa berpikir step-by-step sebelum menjawab",
+                  },
+                  {
+                    t: "Expert Persona",
+                    d: "AI berperan sebagai ahli dengan pengalaman 20+ tahun",
+                  },
+                  {
+                    t: "Quality Gates",
+                    d: "Checklist kualitas yang harus dipenuhi sebelum output dikirim",
+                  },
+                  {
+                    t: "Structured Output",
+                    d: "Format output yang rapi dan mudah dicerna",
+                  },
+                  {
+                    t: "Anti-Generic",
+                    d: "Prompt yang menghasilkan jawaban spesifik, bukan template",
+                  },
+                ].map((item) => (
+                  <li key={item.t} className="flex items-start gap-2">
+                    <svg
+                      className="w-4 h-4 mt-0.5 shrink-0"
+                    style={{ color: "var(--accent)" }}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span>
+                      <strong className="text-[var(--text-primary)]">
+                        {item.t}
+                      </strong>{" "}
+                      — {item.d}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="divider" />
+
+            <div>
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-3">
+                Cara Menggunakan
+              </h3>
+              <ol className="space-y-2">
+                {[
+                  "Pilih target AI (ChatGPT, Claude, Gemini, atau Universal)",
+                  "Ketik kebutuhan Anda di kolom input",
+                  'Klik tombol "Buat Master Prompt"',
+                  "Copy prompt yang dihasilkan",
+                  "Paste prompt tersebut ke AI yang dipilih",
+                ].map((step, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span
+                      className="flex items-center justify-center w-5 h-5 rounded text-[10px] font-bold shrink-0 mt-0.5"
+                      style={{ background: "var(--accent-soft)", color: "var(--accent)" }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-gray-200/50 dark:border-gray-800/50 mt-12 sm:mt-20">
+      <footer
+        className="relative z-10 mt-16 sm:mt-24"
+        style={{ borderTop: "1px solid var(--card-border)" }}
+      >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              AI Master Prompt Generator
-            </span>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              &copy; {new Date().getFullYear()} &middot; Dibuat dengan ❤️
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-[var(--text-muted)]">
+                promptgod.pro
+              </span>
+            </div>
+            <p className="text-xs text-[var(--text-muted)]">
+              &copy; {new Date().getFullYear()}
             </p>
           </div>
         </div>
