@@ -115,13 +115,12 @@ export default function RootLayout({
         <meta name="google-site-verification" content="eOePvsEyJClgkF7CgCxJvM4NvupiOcwQJwjr1xHZi44" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="min-h-screen flex flex-col">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#c9a84c] focus:text-white focus:rounded-lg"
         >
           Langsung ke konten utama
         </a>
