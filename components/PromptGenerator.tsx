@@ -109,7 +109,7 @@ function StepHeader({
   label: string;
   desc: string;
 }) {
-  const colors = ["#c9a84c", "#c9a84c", "#10b981"];
+  const colors = ["#c9a84c", "#c9a84c", "#c9a84c"];
   return (
     <div className="flex items-center gap-3 mb-5">
       <span
