@@ -9,6 +9,9 @@ Sentry.init({
   // Setting this option to true will print useful information to the console while you're setting up Sentry.
   debug: false,
 
+  // Tunnel through our API route to bypass ad-blockers
+  tunnel: "/monitoring",
+
   replaysOnErrorSampleRate: 1.0,
 
   // This sets the sample rate to be 10%. You may want to change it to 100% while in development and then sample at a lower rate in production
